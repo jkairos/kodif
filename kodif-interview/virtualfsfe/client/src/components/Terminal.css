@@ -1,0 +1,57 @@
+.Terminal {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+}
+
+.user-info {
+    margin-left: auto;
+}
+
+.Terminal .output {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+.history-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    color: #61dafb;
+}
+
+.Terminal form {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid #444;
+}
+
+.Terminal form span {
+    margin-right: 0.5rem;
+}
+
+.Terminal form input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: none;
+    background-color: #444;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.Terminal form input:focus {
+    outline: none;
+}

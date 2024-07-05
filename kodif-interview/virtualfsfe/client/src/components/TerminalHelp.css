@@ -1,0 +1,41 @@
+.terminal-help {
+    margin-right: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.help-button {
+    background-color: #61dafb;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.help-button:hover {
+    background-color: #21a1f1;
+}
+
+.help-content {
+    margin-top: 10px;
+}
+
+.help-content h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.help-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.help-content li {
+    margin-bottom: 5px;
+}

@@ -1,0 +1,91 @@
+openapi: 3.0.1
+info:
+  title: Virtual File System API
+  description: API for simulating Unix-like file system navigation
+  version: 1.0.0
+paths:
+  /cd:
+    post:
+      summary: Change Directory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        '200':
+          description: New working directory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DirectoryResponse'
+  /mkdir:
+    post:
+      summary: Make Directory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        '200':
+          description: Directory created message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DirectoryResponse'
+  /ls:
+    post:
+      summary: List Directories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+      responses:
+        '200':
+          description: List of directories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LsResponse'
+  /pwd:
+    get:
+      summary: Print Working Directory
+      responses:
+        '200':
+          description: Current working directory
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PwdResponse'
+components:
+  schemas:
+    CommandRequest:
+      type: object
+      properties:
+        command:
+          type: string
+          example: cd /bar
+    DirectoryResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: /bar
+    LsResponse:
+      type: object
+      properties:
+        directories:
+          type: array
+          items:
+            type: string
+    PwdResponse:
+      type: object
+      properties:
+        cwd:
+          type: string
+          example: /bar
